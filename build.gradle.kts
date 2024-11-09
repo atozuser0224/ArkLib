@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "org.gang"
-version = "0.0.7"
+version = "0.0.9"
 
 repositories {
     mavenCentral()
@@ -20,6 +20,10 @@ dependencies {
     testImplementation(kotlin("test"))
     compileOnly("io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation(kotlin("reflect"))
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.4.1")
+
 }
 
 tasks.test {
