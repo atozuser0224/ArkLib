@@ -18,7 +18,7 @@ fun <T> Map<T, Int>.getElementByRandom(): T? {
 }
 
 
-fun <T> Map<T, Int>.toPercentMap(): List<Int> {
+fun <T> Map<T, Int>.toPercentMap(): Map<T,Int> {
     val totalWeight = this.values.sum()
-    return this.map { ((it.value.toFloat() / totalWeight.toFloat()) * 100).toInt() }
+    return this.toList().associate {it.first to ((it.second.toFloat() / totalWeight.toFloat()) * 100).toInt() }
 }
